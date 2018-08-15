@@ -39,7 +39,8 @@ def show_image_list():
         """iterate through the imagelist and print it in server side"""
         iterator = li.__iter__()
         for i in iterator:
-            return str(li)
+            return str(i)
+        return str(li)
     except requests.exceptions.HTTPError:
         pass
 
@@ -101,11 +102,11 @@ def start_container_from_image():
         """Container is possible to run either with imagename or the containername. But it is not 
          possible to use both value to run a container """
 
-        imagename = data['imagename']
-        container = client.containers.run(imagename, detach=True)
+        #imagename = data['imagename']
+        #container = client.containers.run(imagename, detach=True)
 
-        #containername = str(data['containername'])
-        #container = client.containers.run(containername, detach=True)
+        containername = str(data['containername'])
+        container = client.containers.run(containername, detach=True)
 
         return ('started container:' + str(container))
     except requests.exceptions.HTTPError:
