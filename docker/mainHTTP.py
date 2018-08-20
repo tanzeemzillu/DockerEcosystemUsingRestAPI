@@ -158,6 +158,21 @@ def remove_existing_container():
         pass
 
 
+"""Create Bridge Network"""
+
+
+@app.route("/networkcreate", methods=['POST'])
+def network_create():
+    try:
+        client = docker.from_env()
+        data = request.get_json()
+        networkname = data['networkname']
+        networkcreate = client.networks.create(networkname, driver="bridge")
+        return (str(networkcreate) + 'created successfully')
+    except requests.exceptions.HTTPError:
+        pass
+
+
 if __name__ == "__main__":
     app.run()
 
