@@ -164,14 +164,29 @@ def remove_existing_container():
 @app.route("/networkcreate", methods=['POST'])
 def network_create():
     try:
-        client = docker.from_env()
         data = request.get_json()
         networkname = data['networkname']
-        networkcreate = client.networks.create(networkname, driver="bridge")
+        subnet = data['subnet']
+        iprange = data['iprange']
+        gateway = data['gateway']
+        ipam_pool = docker.types.IPAMPool(subnet, iprange, gateway)
+        ipam_config = docker.types.IPAMConfig(pool_configs=[ipam_pool])
+        client = docker.from_env()
+        networkcreate = client.networks.create(networkname, driver="bridge", ipam = ipam_config)
         return (str(networkcreate) + 'created successfully')
     except requests.exceptions.HTTPError:
         pass
 
+
+"""@app.route("/containerexec", methods=['POST'])
+def network_create():
+    try:
+        client = docker.from_env()
+        data = request.get_json()
+        containerid = data['containerid']
+        containerexec = client.containers.exec_run(containerid, command)
+    except requests.exceptions.HTTPError:
+        pass"""
 
 if __name__ == "__main__":
     app.run()
