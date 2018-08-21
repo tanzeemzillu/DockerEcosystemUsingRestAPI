@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10834845-b64d-4593-a782-b216ffb3138a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/mainHTTP.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mainHTTP.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +17,8 @@
       <file leaf-file-name="mainHTTP.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docker/mainHTTP.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="524">
-              <caret line="194" lean-forward="true" selection-start-line="194" selection-end-line="194" />
+            <state relative-caret-position="314">
+              <caret line="174" column="56" selection-start-line="174" selection-start-column="56" selection-end-line="174" selection-end-column="56" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -47,10 +48,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="43" />
-    <option name="y" value="232" />
-    <option name="width" value="1877" />
-    <option name="height" value="1068" />
+    <option name="x" value="19" />
+    <option name="y" value="20" />
+    <option name="width" value="1875" />
+    <option name="height" value="1060" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -77,7 +78,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="termina&#9;ACTION&#9;ActivateTerminalToolWindow&#10;Terminal&#9;ACTION&#9;ActivateTerminalToolWindow&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;terminal&#9;ACTION&#9;ActivateTerminalToolWindow" />
+    <property name="SearchEverywhereHistoryKey" value="terminal&#9;ACTION&#9;ActivateTerminalToolWindow&#10;termina&#9;ACTION&#9;ActivateTerminalToolWindow&#10;Terminal&#9;ACTION&#9;ActivateTerminalToolWindow&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
@@ -138,13 +139,13 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2498671" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32991803" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32991803" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.25614753" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -158,6 +159,23 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/docker/mainHTTP.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2520">
+          <caret line="172" column="97" selection-start-line="172" selection-start-column="97" selection-end-line="172" selection-end-column="97" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/docker/mainHTTP.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -251,8 +269,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docker/mainHTTP.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="194" lean-forward="true" selection-start-line="194" selection-end-line="194" />
+        <state relative-caret-position="314">
+          <caret line="174" column="56" selection-start-line="174" selection-start-column="56" selection-end-line="174" selection-end-column="56" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>

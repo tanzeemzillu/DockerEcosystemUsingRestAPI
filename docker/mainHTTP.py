@@ -167,10 +167,13 @@ def network_create():
         subnet = data['subnet']
         iprange = data['iprange']
         gateway = data['gateway']
+        bridgename = str(data['bridgename'])
         ipam_pool = docker.types.IPAMPool(subnet, iprange, gateway)
         ipam_config = docker.types.IPAMConfig(pool_configs=[ipam_pool])
         client = docker.from_env()
-        networkcreate = client.networks.create(networkname, driver = "bridge", ipam = ipam_config)
+        networkcreate = client.networks.create(networkname, driver = "bridge", ipam = ipam_config, options={
+            "com.docker.network.bridge.name": bridgename
+        })
         return str(networkcreate) + 'created successfully'
     except requests.exceptions.HTTPError:
         pass
@@ -187,8 +190,7 @@ def container_exec():
         container=client.containers.run(imagename, detach=True, name=containername, command=command)
         log = str(container.logs())
         runningcontainer = client.containers.get(containername)
-        client.containers.run(containername)
-        return "Running container is: " + str(runningcontainer) + "and log is " + str(log)
+        return "Container is: " + str(runningcontainer) + "and log is " + str(log)
     except requests.exceptions.HTTPError:
         pass
 
