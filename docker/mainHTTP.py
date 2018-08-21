@@ -151,7 +151,7 @@ def remove_existing_container():
     try:
         client = docker.from_env()
         delete = client.containers.prune()
-        return (str(delete))
+        return str(delete)
     except requests.exceptions.HTTPError:
         pass
 
@@ -171,21 +171,27 @@ def network_create():
         ipam_config = docker.types.IPAMConfig(pool_configs=[ipam_pool])
         client = docker.from_env()
         networkcreate = client.networks.create(networkname, driver = "bridge", ipam = ipam_config)
-        return (str(networkcreate) + 'created successfully')
+        return str(networkcreate) + 'created successfully'
     except requests.exceptions.HTTPError:
         pass
 
 
-"""@app.route("/containerexec", methods=['POST'])
-def network_create():
+@app.route("/containerexec", methods=['POST'])
+def container_exec():
     try:
         client = docker.from_env()
         data = request.get_json()
-        containerid = data['containerid']
-        containerexec = client.containers.exec_run(containerid)
-        return containerexec
+        imagename = data['imagename']
+        containername = str(data['containername'])
+        command = str(data['command'])
+        container=client.containers.run(imagename, detach=True, name=containername, command=command)
+        log = str(container.logs())
+        runningcontainer = client.containers.get(containername)
+        client.containers.run(containername)
+        return "Running container is: " + str(runningcontainer) + "and log is " + str(log)
     except requests.exceptions.HTTPError:
-        pass"""
+        pass
+
 
 if __name__ == "__main__":
     app.run()
