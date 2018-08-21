@@ -102,13 +102,11 @@ def start_container_from_image():
         """Container is possible to run either with imagename or the containername. But it is not 
          possible to use both value to run a container """
 
-        #imagename = data['imagename']
-        #container = client.containers.run(imagename, detach=True)
-
+        imagename = data['imagename']
         containername = str(data['containername'])
-        container = client.containers.run(containername, detach=True)
-
-        return ('started container:' + str(container))
+        client.containers.run(imagename, detach=True, name=containername)
+        containerstate = client.containers.get(containername)
+        return ('started container'+ str(containerstate))
     except requests.exceptions.HTTPError:
         pass
 
@@ -172,7 +170,7 @@ def network_create():
         ipam_pool = docker.types.IPAMPool(subnet, iprange, gateway)
         ipam_config = docker.types.IPAMConfig(pool_configs=[ipam_pool])
         client = docker.from_env()
-        networkcreate = client.networks.create(networkname, driver="bridge", ipam = ipam_config)
+        networkcreate = client.networks.create(networkname, driver = "bridge", ipam = ipam_con)
         return (str(networkcreate) + 'created successfully')
     except requests.exceptions.HTTPError:
         pass
@@ -184,7 +182,8 @@ def network_create():
         client = docker.from_env()
         data = request.get_json()
         containerid = data['containerid']
-        containerexec = client.containers.exec_run(containerid, command)
+        containerexec = client.containers.exec_run(containerid)
+        return containerexec
     except requests.exceptions.HTTPError:
         pass"""
 
