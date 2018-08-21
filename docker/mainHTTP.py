@@ -68,7 +68,7 @@ def pull_image_from_hub():
         data = request.get_json()
         imagename = data['imagename']
         pulledimage = client.images.pull(imagename)
-        return (str(pulledimage) + 'download successful')
+        return ("pulled image:" +str(pulledimage))
     except requests.exceptions.HTTPError:
         pass
 
@@ -170,7 +170,7 @@ def network_create():
         ipam_pool = docker.types.IPAMPool(subnet, iprange, gateway)
         ipam_config = docker.types.IPAMConfig(pool_configs=[ipam_pool])
         client = docker.from_env()
-        networkcreate = client.networks.create(networkname, driver = "bridge", ipam = ipam_con)
+        networkcreate = client.networks.create(networkname, driver = "bridge", ipam = ipam_config)
         return (str(networkcreate) + 'created successfully')
     except requests.exceptions.HTTPError:
         pass
