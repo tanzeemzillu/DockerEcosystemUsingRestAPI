@@ -1,6 +1,7 @@
 import docker
 from flask import Flask, request
 import json
+import subprocess
 
 import requests
 app = Flask(__name__)
@@ -37,9 +38,9 @@ def show_image_list():
         client = docker.from_env()
         li = client.images.list()
         """iterate through the imagelist and print it in server side"""
-        iterator = li.__iter__()
+        '''iterator = li.__iter__()
         for i in iterator:
-            return str(i)
+            return str(i)'''
         return str(li)
     except requests.exceptions.HTTPError:
         pass
