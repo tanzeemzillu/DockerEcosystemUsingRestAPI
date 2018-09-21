@@ -1,7 +1,6 @@
 import docker
 from flask import Flask, request
 import json
-import subprocess
 
 import requests
 app = Flask(__name__)

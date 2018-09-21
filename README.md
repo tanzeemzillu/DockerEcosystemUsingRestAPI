@@ -19,3 +19,5 @@ The functions which have been implemented in the code are in below
 9. Remove all containers
 10. Create docker bridge network
 11. Pass a command inside of a container
+
+For this project `Python` version `3.5` has been used. For web functionlity `Flask` framework has been used. And `docker` framework ahs beed used to implement docker functions in the code. 
